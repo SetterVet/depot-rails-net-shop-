@@ -19,6 +19,9 @@
         <li><a href="#">News</a></li>
         <li><a href="#">Contact</a></li>
         <li><p><%= Time.now %></p></li>
+        <%# if session[:counter] >=5 %>
+        <li><p><%= session[:counter] %> - Count of open index in store controller<br/> counter reset after add product to cart</p></li>
+          <%# end %>
       </ul>
     </div>
     <div id="main">
