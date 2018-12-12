@@ -1,10 +1,23 @@
+<script>
+
+    function ajax_delete_item(id){
+        $.ajax({
+            method: "Delete",
+            url: "/line_items/"+id.toString(),
+            data: {id: id}
+        })
+    }
+
+</script>
+
 <% if line_item == @current_item %>
 <tr id="current_item">
 <% else %>
 <tr>
 <% end %>
   <td><%= line_item.quantity %>&times;</td>
-  <td><%= line_item.product.title %></td>
+  <td class="product_title"><%= line_item.product.title %></td>
   <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-<!--  <td><%#= button_to "Delete item",line_item, method: :delete %></td>-->
+  <td><button onclick="ajax_delete_item(<%= line_item.id %>)">Delete Item</button></td>
+<!--  <td><%#= button_to "Delete item",line_item, method: :delete  %></td>-->
 </tr>
