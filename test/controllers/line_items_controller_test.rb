@@ -45,7 +45,7 @@ class LineItemsControllerTest < ActionController::TestCase
       delete :destroy, id: @line_item
     end
 
-    assert_redirected_to store_index_url
+    assert_redirected_to store_url
   end
 
   test "should create line_item via ajax" do
@@ -54,7 +54,7 @@ class LineItemsControllerTest < ActionController::TestCase
     end
     assert_response :success
     assert_select_jquery :html, '#cart' do
-      assert_select 'tr#current_item td', /'Programming Ruby 1.9'/
+      assert_select 'tr#current_item td', /Programming Ruby 1.9/
     end
   end
 end

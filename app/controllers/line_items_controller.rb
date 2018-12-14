@@ -68,7 +68,7 @@ class LineItemsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to store_index_url }
+      format.html { redirect_to store_path }
       format.json { head :no_content }
     end
   end
